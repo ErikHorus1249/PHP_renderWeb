@@ -1,16 +1,20 @@
 <?php
     include 'inc/header.php';
 ?>
-<?php include './../classes/zoom.php' ?>
+<?php include './../classes/salary.php' ?>
 <?php
+    $salary = new salary();
+  	if(!isset($_GET['salaryid']) || $_GET['salaryid']==NULL){
+  		echo "<scipt>window.location('salarylist.php')</scipt>";
+  	}else{
+  		$id1 = $_GET['salaryid'];
+  	}
 
-    $zoom = new zoom();
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        $zoomName = $_POST['zoom_name'];
-        $zoomDesc = $_POST['zoom_desc'];
-        $insertZoom = $zoom->insert_zoom($zoomName,$zoomDesc);
+        $salaryName = $_POST['salary_name'];
+        $salaryDesc = $_POST['salary_desc'];
+        $updatesalary = $salary->update_salary($salaryName, $salaryDesc, $id1);
 
     }
  ?>
@@ -21,36 +25,46 @@
                 <main>
                   <div class="container-fluid">
                     <span><?php
-                        if(isset($insertZoom)){
-                            echo $insertZoom;
+                        if(isset($updatesalary)){
+                            echo $updatesalary;
                         }
                      ?></span>
                   </div>
                     <div class="container-fluid">
-                        <h2 class="mt-4">Thêm thông tin phòng ban mới</h2>
+                        <h2 class="mt-4">Sửa thông tin phòng </h2>
                         <div class="row">
                             <div class="container-fluid">
                   <ol class="breadcrumb mb-4">
-                      <li class="breadcrumb-item active">Thêm phòng</li>
+                      <li class="breadcrumb-item active">Sửa phòng</li>
                   </ol>
                   <div class="container-fluid">
-                    <form action="addNewZoom.php" method="post">
+                    <?php
+                    	$get_salary_name = $salary->getsalarybyId($id1);
+                    	if($get_salary_name){
+                    		while($result = $get_salary_name->fetch_assoc()){
+
+                    ?>
+                    <form action="" method="post">
                       <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Tên phòng</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Mô tả bậc lương</label>
                         <div class="col-10">
-                          <input class="form-control" type="text" name="zoom_name" value="Giáo vụ" id="example-text-input">
+                          <input class="form-control" type="text" name="salary_desc" value="<?php echo $result['salDescription'] ?>" id="example-text-input">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Mô tả chi tiết</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Giá trị bậc lương</label>
                         <div class="col-10">
-                          <textarea name="zoom_desc" class="form-control"></textarea>
+                          <input class="form-control" type="text" name="salary_name" value="<?php echo $result['salValue'] ?>" id="example-text-input">
                         </div>
                       </div>
                       <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                           <input type="submit" class="btn btn-primary" value="Lưu">
                       </div>
                     </form>
+                    <?php
+                         }
+                  }
+                    ?>
                   </div>
                             </div>
                         </div>

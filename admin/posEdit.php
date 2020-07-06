@@ -1,16 +1,20 @@
 <?php
     include 'inc/header.php';
 ?>
-<?php include './../classes/zoom.php' ?>
+<?php include './../classes/position.php' ?>
 <?php
+    $position = new position();
+  	if(!isset($_GET['positionid']) || $_GET['positionid']==NULL){
+  		echo "<scipt>window.location('positionlist.php')</scipt>";
+  	}else{
+  		$id = $_GET['positionid'];
+  	}
 
-    $zoom = new zoom();
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        $zoomName = $_POST['zoom_name'];
-        $zoomDesc = $_POST['zoom_desc'];
-        $insertZoom = $zoom->insert_zoom($zoomName,$zoomDesc);
+        $posName = $_POST['position_name'];
+        // $positionDesc = $_POST['position_desc'];
+        $updateposition = $position->update_position($posName, $id);
 
     }
  ?>
@@ -21,36 +25,40 @@
                 <main>
                   <div class="container-fluid">
                     <span><?php
-                        if(isset($insertZoom)){
-                            echo $insertZoom;
+                        if(isset($updateposition)){
+                            echo $updateposition;
                         }
                      ?></span>
                   </div>
                     <div class="container-fluid">
-                        <h2 class="mt-4">Thêm thông tin phòng ban mới</h2>
+                        <h2 class="mt-4">Sửa thông tin vị trí</h2>
                         <div class="row">
                             <div class="container-fluid">
                   <ol class="breadcrumb mb-4">
-                      <li class="breadcrumb-item active">Thêm phòng</li>
+                      <li class="breadcrumb-item active">Sửa vị trí</li>
                   </ol>
                   <div class="container-fluid">
-                    <form action="addNewZoom.php" method="post">
+                    <?php
+                    	$get_position_name = $position->getpositionbyId($id);
+                    	if($get_position_name){
+                    		while($result = $get_position_name->fetch_assoc()){
+
+                    ?>
+                    <form action="" method="post">
                       <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Tên phòng</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Tên vị trí</label>
                         <div class="col-10">
-                          <input class="form-control" type="text" name="zoom_name" value="Giáo vụ" id="example-text-input">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Mô tả chi tiết</label>
-                        <div class="col-10">
-                          <textarea name="zoom_desc" class="form-control"></textarea>
+                          <input class="form-control" type="text" name="position_name" value="<?php echo $result['positionName'] ?>" id="example-text-input">
                         </div>
                       </div>
                       <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                           <input type="submit" class="btn btn-primary" value="Lưu">
                       </div>
                     </form>
+                    <?php
+                         }
+                  }
+                    ?>
                   </div>
                             </div>
                         </div>

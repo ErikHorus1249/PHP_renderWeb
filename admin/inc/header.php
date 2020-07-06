@@ -21,6 +21,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
@@ -91,8 +92,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.php">Bảng vị trí</a>
-                                            <a class="nav-link" href="register.html">Thêm vị trí</a>
+                                            <a class="nav-link" href="posList.php">Bảng vị trí</a>
+
                                         </nav>
                                     </div>
 
@@ -102,8 +103,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth1" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="addNewZoom.php">Bảng phòng ban</a>
-                                            <a class="nav-link" href="register.html">Thêm phòng ban</a>
+                                            <a class="nav-link" href="zoomList.php">Bảng phòng ban</a>
+                                            <a class="nav-link" href="addNewZoom.php">Thêm phòng ban</a>
                                         </nav>
                                     </div>
 
@@ -113,8 +114,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth2" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.php">Bảng hệ số lương</a>
-                                            <a class="nav-link" href="register.html">Bảng lương cơ sở</a>
+                                            <a class="nav-link" href="salaryList.php">Bảng lương cơ sở</a>
                                         </nav>
                                     </div>
                                     <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

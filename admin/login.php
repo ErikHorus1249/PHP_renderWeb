@@ -41,11 +41,11 @@
                                 			?></span>
                                         <form action="login.php" method="post">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                                <label class="small mb-1" for="inputEmailAddress">Email của bạn</label>
                                                 <input class="form-control py-4" id="inputEmailAddress" type="text" placeholder="Enter email address" name="adminUser" />
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
+                                                <label class="small mb-1" for="inputPassword">Mật khẩu</label>
                                                 <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="adminPass" />
                                             </div>
                                             <div class="form-group">
@@ -63,7 +63,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.html"></a></div>
                                     </div>
                                 </div>
                             </div>
