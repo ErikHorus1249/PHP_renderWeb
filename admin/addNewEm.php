@@ -43,6 +43,7 @@
                       <li class="breadcrumb-item active">Thêm nhân viên</li>
                   </ol>
                   <div class="container-fluid">
+
                     <form action="" method="post" enctype="multipart/form-data">
                       <div class="form-group row">
                         <label for="example-text-input" class="col-2 col-form-label">Họ và Tên</label>
@@ -50,6 +51,7 @@
                           <input class="form-control" type="text" value="" name="emName" id="example-text-input">
                         </div>
                       </div>
+
                       <div class="form-group row">
                         <label for="example-text-input" class="col-2 col-form-label">Quê quán</label>
                         <div class="col-10">
