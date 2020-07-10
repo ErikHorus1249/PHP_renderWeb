@@ -304,7 +304,7 @@
                                             <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="add" class="form-control" required>
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0 col-lg-12 col-md-12 col-sm-12">
-                                            <input type="submit" class="btn btn-primary" value="Lưu">
+                                            <input type="submit" class="btn btn-primary" value="Gửi">
                                         </div>
                                     </div>
                                 </form>
