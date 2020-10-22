@@ -26,8 +26,8 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
             <a class="navbar-brand" href="index.php">
-              <img src="upload/ptit-logo.png" width=60% alt="Italian Trulli">
-              <!-- <p>Học Viện Công Nghệ Bưu Chính Viến Thông</p> -->
+              <img src="upload/logo1.png" width=60% alt="Italian Trulli">
+              <!-- <p>Học viện sáng tạo Teky</p> -->
             </a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
